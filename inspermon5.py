@@ -27,6 +27,8 @@ def batalha(inspermon,inspermon_selvagem):
 			if inspermon_selvagem_vida < 0:
 				venceu = "Você venceu a batalha"
 				insperdex.append(inspermon_selvagem)
+				inspermon["xp"] = inspermon["xp"] + 10
+				print("O inspermon {0} ganhou 10 XP!!!".format(inspermon["nome"]))
 				return venceu
 
 			print("{0} prepare-se para receber o contra-ataque do inspèrmon {1}\n".format(inspermon["nome"],inspermon_selvagem["nome"]))
@@ -79,9 +81,9 @@ insperdex = []
 
 #Inspèrmons iniciais
 
-inspermon_quatamander = {"nome":"Quatamander", "ataque":90, "vida": 180,"defesa": 18}
-inspermon_torichu = {"nome":"Torichu","ataque":70,"vida":90,"defesa":30}
-inspermon_danissaur = {"nome":"Danissaur","ataque":80,"vida":120,"defesa":10}
+inspermon_quatamander = {"nome":"Quatamander", "ataque":400, "vida": 180,"defesa": 18,"xp":0}
+inspermon_torichu = {"nome":"Torichu","ataque":70,"vida":90,"defesa":30,"xp":0}
+inspermon_danissaur = {"nome":"Danissaur","ataque":80,"vida":120,"defesa":10,"xp":0}
 
 #Inspèrmons selvagens
 
@@ -90,6 +92,13 @@ inspermon_mew = {"nome":"Mew","ataque":70,"vida":200,"defesa":12}
 inspermon_papanjo = {"nome":"Papanjo","ataque":80,"vida":120,"defesa":10}
 inspermon_inspee = {"nome":"Inspee","ataque":65,"vida":80,"defesa":35}
 inspermon_birinite = {"nome":"Birinite","ataque":70,"vida":100,"defesa":18}
+
+#Inspermons evoluidos
+
+inspermon_quatachu = {"nome":"Quatachu", "ataque":120, "vida": 200,"defesa": 22,"xp":0}
+inspermon_toridelas = {"nome":"Toridelas", "ataque":90, "vida": 110,"defesa": 25,"xp":0}
+inspermon_danipai = {"nome":"Danipai", "ataque":100, "vida": 140,"defesa": 20,"xp":0}
+
 
 #Inspèrmon input's, print's e title's
 
@@ -156,7 +165,22 @@ while True:
 			luta = batalha(inspermon_casa,inspermon_visitante)
 			if luta == "Você venceu a batalha":
 				print("Você venceu a batalha")
-				continue
+				if inspermon_casa["xp"] >= 20:
+					if inspermon_casa["nome"] == "Quatamander":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_quatachu["nome"]))
+						inspermon_casa = inspermon_quatachu
+						insperdex[0] = inspermon_quatachu
+						continue
+					if inspermon_casa["nome"] == "Torichu":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_toridelas["nome"]))
+						inspermon_casa = inspermon_toridelas
+						insperdex[0] = inspermon_toridelas
+						continue
+					if inspermon_casa["nome"] == "Danissaur":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_danipai["nome"]))
+						inspermon_casa = inspermon_danipai
+						insperdex[0] = inspermon_danipai
+						continue
 			if luta == "GAME OVER":
 				print("GAME OVER")
 				break
@@ -169,7 +193,22 @@ while True:
 			luta = batalha(inspermon_casa,inspermon_visitante)
 			if luta == "Você venceu a batalha":
 				print("Você venceu a batalha")
-				continue
+				if inspermon_casa["xp"] >= 20:
+					if inspermon_casa["nome"] == "Quatamander":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_quatachu["nome"]))
+						inspermon_casa = inspermon_quatachu
+						insperdex[0] = inspermon_quatachu
+						continue
+					if inspermon_casa["nome"] == "Torichu":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_toridelas["nome"]))
+						inspermon_casa = inspermon_toridelas
+						insperdex[0] = inspermon_toridelas
+						continue
+					if inspermon_casa["nome"] == "Danissaur":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_danipai["nome"]))
+						inspermon_casa = inspermon_danipai
+						insperdex[0] = inspermon_danipai
+						continue
 			if luta == "GAME OVER":
 				print("GAME OVER")
 				break
@@ -182,7 +221,22 @@ while True:
 			luta = batalha(inspermon_casa,inspermon_visitante)
 			if luta == "Você venceu a batalha":
 				print("Você venceu a batalha")
-				continue
+				if inspermon_casa["xp"] >= 20:
+					if inspermon_casa["nome"] == "Quatamander":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_quatachu["nome"]))
+						inspermon_casa = inspermon_quatachu
+						insperdex[0] = inspermon_quatachu
+						continue
+					if inspermon_casa["nome"] == "Torichu":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_toridelas["nome"]))
+						inspermon_casa = inspermon_toridelas
+						insperdex[0] = inspermon_toridelas
+						continue
+					if inspermon_casa["nome"] == "Danissaur":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_danipai["nome"]))
+						inspermon_casa = inspermon_danipai
+						insperdex[0] = inspermon_danipai
+						continue
 			if luta == "GAME OVER":
 				print("GAME OVER")
 				break
@@ -195,7 +249,22 @@ while True:
 			luta = batalha(inspermon_casa,inspermon_visitante)
 			if luta == "Você venceu a batalha":
 				print("Você venceu a batalha")
-				continue
+				if inspermon_casa["xp"] >= 20:
+					if inspermon_casa["nome"] == "Quatamander":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_quatachu["nome"]))
+						inspermon_casa = inspermon_quatachu
+						insperdex[0] = inspermon_quatachu
+						continue
+					if inspermon_casa["nome"] == "Torichu":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_toridelas["nome"]))
+						inspermon_casa = inspermon_toridelas
+						insperdex[0] = inspermon_toridelas
+						continue
+					if inspermon_casa["nome"] == "Danissaur":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_danipai["nome"]))
+						inspermon_casa = inspermon_danipai
+						insperdex[0] = inspermon_danipai
+						continue
 			if luta == "GAME OVER":
 				print("GAME OVER")
 				break
@@ -208,7 +277,22 @@ while True:
 			luta = batalha(inspermon_casa,inspermon_visitante)
 			if luta == "Você venceu a batalha":
 				print("Você venceu a batalha")
-				continue
+				if inspermon_casa["xp"] >= 20:
+					if inspermon_casa["nome"] == "Quatamander":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_quatachu["nome"]))
+						inspermon_casa = inspermon_quatachu
+						insperdex[0] = inspermon_quatachu
+						continue
+					if inspermon_casa["nome"] == "Torichu":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_toridelas["nome"]))
+						inspermon_casa = inspermon_toridelas
+						insperdex[0] = inspermon_toridelas
+						continue
+					if inspermon_casa["nome"] == "Danissaur":
+						print("Seu inspermon {0} evoluiu para {1}".format(inspermon_casa["nome"],inspermon_danipai["nome"]))
+						inspermon_casa = inspermon_danipai
+						insperdex[0] = inspermon_danipai
+						continue
 			if luta == "GAME OVER":
 				print("GAME OVER")
 				break
@@ -226,3 +310,4 @@ while True:
 	if passear_dormir == "d":
 		print("Bons sonhos")
 		break
+

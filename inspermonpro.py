@@ -12,7 +12,7 @@ def batalha(inspermon_casa,inspermon_visitante):
 			ganhou = print("Você ganhou a batalha!!!")
 			print("Voce capturou este inspermon!!!")
 			insperdex.append(inspermon_visitante)
-			return ganhou
+			return insperdex.append(inspermon_visitante)
 
 
 		batalha_passeio = input("{0}, você deseja atacar ou fugir de {1}? ".format(escolha_inspermon,inspermon_visitante["nome"]))
